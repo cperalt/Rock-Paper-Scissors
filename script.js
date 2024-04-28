@@ -6,6 +6,8 @@ let lossesInfo = document.querySelector("#losses");
 let drawsInfo = document.querySelector("#draws");
 let turnInfo = document.querySelector("#turn");
 let reset = document.querySelector("#reset");
+let playerImg = document.querySelector("#playerImg");
+let computerImg = document.querySelector("#computerImg");
 
 //Creating Variables
 let turn = 0;
