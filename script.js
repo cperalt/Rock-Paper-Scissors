@@ -1,4 +1,4 @@
-
+//Storing targeted html elements in variables
 let gameInfo = document.querySelector("#game-info");
 let playerTurn = document.querySelector("#playerTurn");
 let winsInfo = document.querySelector("#wins");
@@ -16,6 +16,7 @@ let losses = 0;
 let ties = 0;
 let computerHand;
 
+//Function to randomize computer hand picks, returns move
 const computerTurn = () => {
 
     //Array of possible moves
@@ -30,15 +31,26 @@ const computerTurn = () => {
 
 
 playerTurn.addEventListener("keydown", (event) => {
+
+    //Sets input value equal to what has been entered
     let playerValue = playerTurn.value;
+
+    //Converts input value to all lowercase letters so the inputs are not case sensitive
     playerValue = playerValue.toLowerCase();
 
+    //Execute the following upon pressing enter or return
     if(event.key === 'Enter') {
 
+        //Increase Turn count, update turn display info, execute computerTurn() and assign to computerHand, update Images
         turn++;
         turnInfo.innerText = `Turn: ${turn}`;
         computerHand = computerTurn();
+        playerImg.src = `/SVGs/${playerValue}.svg`;
+        computerImg.src = `/SVGs/${computerHand}.svg`;
 
+        //Conditonals that check playerValue and computerHand values to determine who wins, looses, or ties
+        //first if checks ties, next else if checks wins, next else if checks losses.
+        //Last else statement is for invalid inputs
         if (playerValue == computerHand) {
             ties++;
             gameInfo.innerText = `You chose ${playerValue} and the computer chose ${computerHand}. Its a Tie!`; 
@@ -63,10 +75,14 @@ playerTurn.addEventListener("keydown", (event) => {
         } else {
             alert('Please Enter A Valid Response');
             turn--;
+            playerImg.src = `/SVGs/hand.svg`;
+            computerImg.src = `/SVGs/hand.svg`;
+            gameInfo.innerText = "Try again. The computer is waiting for your turn";
         }
     };
 });
 
+//Reset button clears stat values
 reset.addEventListener('click', () => {
     turn = 0;
     turnInfo.innerText = "Turn: 1";

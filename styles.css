@@ -1,33 +1,103 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Jersey 15", sans-serif;
+    font-weight: 400;
 }
 
 html {
-    font-size: 25px;
+    font-size: 24px;
+
+    @media only screen and (min-width: 481px) {
+        font-size: 25px;
+    }
 }
 
 .game_container {
     display: flex;
-    background-color: pink;
+    position: relative;
+    background-color: #b7e2fe;
     flex-direction: column;
     width: 100%;
     height: 100vh;
+    align-items: center; 
 }
 
 img {
-    width: 6rem;
+    width: 7rem;
+
+    @media only screen and (min-width: 481px) {
+        width: 20rem;
+    }
+}
+
+#images {
+    margin-top: 12rem;
+
+    @media only screen and (min-width: 481px) {
+        margin-top: 6rem;
+    }
+}
+
+#stats {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+#stats > h4 {
+    padding: .2rem;
+}
+
+#playerImg {
+    margin-right: 0;
+
+    @media only screen and (min-width: 481px) {
+        margin-right: 3rem;
+    }
+}
+
+#computerImg {
+    margin-left: 0;
+
+    @media only screen and (min-width: 481px) {
+        margin-left: 3rem;
+    }
+}
+
+#versus {
+    width: 2rem;
+
+    @media only screen and (min-width: 481px) {
+        width: 3rem;
+    }
 }
 
 #playerTurn {
     width: 6rem;
     height: 1.5rem;
     font-size: 1rem;
+    text-align: center;
+    background-color: inherit;
 }
 
+#instructions {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+
+    @media only screen and (min-width: 481px) {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+}
+
+#game-info {
+    text-align: center;
+}
 
 #reset {
     width: 3rem;
     height: 1.5rem;
     font-size: 1rem;
+    margin-top: 1rem;
 }
