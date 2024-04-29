@@ -45,8 +45,8 @@ playerTurn.addEventListener("keydown", (event) => {
         turn++;
         turnInfo.innerText = `Turn: ${turn}`;
         computerHand = computerTurn();
-        playerImg.src = `/SVGs/${playerValue}.svg`;
-        computerImg.src = `/SVGs/${computerHand}.svg`;
+        playerImg.src = `SVGs/${playerValue}.svg`;
+        computerImg.src = `SVGs/${computerHand}.svg`;
 
         //Conditonals that check playerValue and computerHand values to determine who wins, looses, or ties
         //first if checks ties, next else if checks wins, next else if checks losses.
@@ -75,8 +75,8 @@ playerTurn.addEventListener("keydown", (event) => {
         } else {
             alert('Please Enter A Valid Response');
             turn--;
-            playerImg.src = `/SVGs/hand.svg`;
-            computerImg.src = `/SVGs/hand.svg`;
+            playerImg.src = `SVGs/hand.svg`;
+            computerImg.src = `SVGs/hand.svg`;
             gameInfo.innerText = "Try again. The computer is waiting for your turn";
         }
     };
